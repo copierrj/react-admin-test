@@ -1,5 +1,18 @@
-import jsonServerProvider from "ra-data-json-server";
+import { fetchUtils } from 'react-admin';
+import postgrestRestProvider,
+     { IDataProviderConfig,
+       defaultSchema } from '@raphiniert/ra-data-postgrest';
 
-export const dataProvider = jsonServerProvider(
-  import.meta.env.VITE_JSON_SERVER_URL
-);
+
+const config: IDataProviderConfig = {
+    apiUrl: 'http://localhost:3000',
+    httpClient: fetchUtils.fetchJson,
+    defaultListOp: 'eq',
+    primaryKeys: new Map([
+      ["film", ["film_id"]],
+      ["language", ["language_id"]]
+    ]),
+    schema: defaultSchema
+}
+
+export const dataProvider = postgrestRestProvider(config);
