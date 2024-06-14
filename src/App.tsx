@@ -12,6 +12,6 @@ import { UserList } from "./UserList";
 export const App = () => (
   <Admin dataProvider={dataProvider} authProvider={authProvider}>
     <Resource name="posts" list={ListGuesser} />
-    <Resource name="users" list={UserList} />
+    <Resource name="users" list={UserList} recordRepresentation="name" />
   </Admin>
 );
