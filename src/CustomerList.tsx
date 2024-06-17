@@ -1,8 +1,12 @@
-import { BooleanField, Datagrid, DateField, EditButton, EmailField, List, TextField } from 'react-admin';
+import { BooleanField, BooleanInput, Datagrid, DateField, EditButton, EmailField, List, TextField } from 'react-admin';
 
 export const CustomerList = () => {
+    const filters = [
+        <BooleanInput source="activebool" label="Active" defaultValue="true"/>
+    ];
+
     return (
-        <List>
+        <List filters={filters}>
             <Datagrid rowClick="false">
                 <TextField source="first_name" />
                 <TextField source="last_name" />
