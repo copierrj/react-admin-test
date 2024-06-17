@@ -13,7 +13,8 @@ const config: IDataProviderConfig = {
       ["actor", ["actor_id"]],
       ["film_actor", ["film_id", "actor_id"]],
       ["language", ["language_id"]],
-      ["customer", ["customer_id"]]
+      ["customer", ["customer_id"]],
+      ["address", ["address_id"]]
     ]),
     schema: defaultSchema
 }
