@@ -1,4 +1,4 @@
-import { BooleanField, BooleanInput, Datagrid, DateField, EditButton, EmailField, List, TextField } from 'react-admin';
+import { BooleanField, BooleanInput, Datagrid, DateField, EditButton, EmailField, List, ShowButton, TextField } from 'react-admin';
 
 export const CustomerList = () => {
     const filters = [
@@ -14,6 +14,7 @@ export const CustomerList = () => {
                 <BooleanField source="activebool" label="Active" />
                 <DateField source="create_date" />
                 <DateField source="last_update" />
+                <ShowButton/>
                 <EditButton/>
             </Datagrid>
         </List>
