@@ -10,6 +10,8 @@ const config: IDataProviderConfig = {
     defaultListOp: 'eq',
     primaryKeys: new Map([
       ["film", ["film_id"]],
+      ["actor", ["actor_id"]],
+      ["film_actor", ["film_id", "actor_id"]],
       ["language", ["language_id"]]
     ]),
     schema: defaultSchema
