@@ -3,6 +3,7 @@ import { Show, SimpleShowLayout, TextField, SimpleList, ArrayField } from 'react
 export const ActorShow = () => {
     const meta = {
         columns: [
+            "actor_id",
             "first_name",
             "last_name",
             "films:film(id:film_id,title,release_year)"

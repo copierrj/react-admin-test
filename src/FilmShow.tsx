@@ -4,6 +4,7 @@ import ChipArrayField from './ChipArrayField';
 export const FilmShow = () => {
     const meta = {
         columns: [
+            "film_id",
             "title",
             "description",
             "release_year",
