@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@raphiniert/ra-data-postgrest": "^2.1.0",
+    "@react-admin/ra-relationships": "^4.5.11",
     "ra-data-json-server": "^4.16.0",
     "react": "^18.2.0",
     "react-admin": "^4.16.0",
