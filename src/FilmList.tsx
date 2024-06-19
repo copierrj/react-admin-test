@@ -1,4 +1,4 @@
-import { Datagrid, List, NumberField, TextField } from 'react-admin';
+import { Datagrid, List, NumberField, TextField, ShowButton, EditButton } from 'react-admin';
 
 export const FilmList = () => {
     const meta = {
@@ -15,13 +15,15 @@ export const FilmList = () => {
 
     return (
         <List queryOptions={{ meta }}>
-            <Datagrid rowClick="show">
+            <Datagrid rowClick={false}>
                 <TextField source="title" />
                 <TextField source="description" />
                 <NumberField source="release_year" options={{useGrouping: false}}/>
                 <TextField source="language_name"/>
                 <NumberField source="length" />
                 <TextField source="rating" />
+                <ShowButton />
+                <EditButton />
             </Datagrid>
         </List>
     );
