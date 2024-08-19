@@ -60,6 +60,16 @@ const myTheme = {
       defaultProps: {
         variant: "outlined"
       }
+    },
+    MyComponent: {
+      defaultProps: {
+        variant: "outlined"
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: "10px"
+        }
+      }
     }
   }
 }

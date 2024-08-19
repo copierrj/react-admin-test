@@ -1,10 +1,12 @@
-import { styled } from "@mui/material/styles";
+import { styled, useThemeProps } from "@mui/material/styles";
+import { forwardRef } from "react";
 
 export type MyComponentProps = {
     variant?: "outlined"
+    children?: string | JSX.Element
 };
 
-export const MyComponent = styled('div', {
+const MyComponentRoot = styled('div', {
     name: "MyComponent",
     slot: "Root",
     shouldForwardProp: (prop) => prop !== "variant"
@@ -26,4 +28,9 @@ export const MyComponent = styled('div', {
             }
         ]
     }
+});
+
+export const MyComponent = forwardRef<HTMLDivElement, MyComponentProps>((inProps, ref) => {
+    const props = useThemeProps({ props: inProps, name: "MyComponent" });
+    return <MyComponentRoot ref={ref} {...props}/>
 });

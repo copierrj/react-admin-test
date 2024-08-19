@@ -1,4 +1,5 @@
 import { Datagrid, List, NumberField, TextField, ShowButton, EditButton } from 'react-admin';
+import { MyComponent } from './MyComponent';
 
 export const FilmList = () => {
     const meta = {
@@ -24,6 +25,8 @@ export const FilmList = () => {
                 <TextField source="rating" />
                 <ShowButton />
                 <EditButton />
+                <MyComponent>Hello</MyComponent>
+                <MyComponent variant='outlined'>Hello</MyComponent>
             </Datagrid>
         </List>
     );
