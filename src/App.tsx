@@ -63,11 +63,15 @@ const myTheme = {
     },
     MyComponent: {
       defaultProps: {
-        variant: "outlined"
+        //variant: "outlined"
       },
       styleOverrides: {
         root: {
           borderRadius: "10px"
+        },
+        label: {
+          paddingLeft: "10px",
+          paddingRight: "20px"
         }
       }
     }

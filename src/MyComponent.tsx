@@ -1,5 +1,6 @@
 import { styled, useThemeProps } from "@mui/material/styles";
 import { forwardRef } from "react";
+import { useRecordContext } from "react-admin";
 
 export type MyComponentProps = {
     variant?: "outlined"
@@ -27,10 +28,34 @@ const MyComponentRoot = styled('div', {
                 }
             }
         ]
-    }
+    };
+});
+
+const MyComponentLabel = styled('span', {
+    name: "MyComponent",
+    slot: "Label"
+})(props => {
+    return {
+
+    };
 });
 
 export const MyComponent = forwardRef<HTMLDivElement, MyComponentProps>((inProps, ref) => {
-    const props = useThemeProps({ props: inProps, name: "MyComponent" });
-    return <MyComponentRoot ref={ref} {...props}/>
+    const {children, ...props} = useThemeProps({ props: inProps, name: "MyComponent" });
+    return (
+        <MyComponentRoot ref={ref} {...props}>
+            <MyComponentLabel>{children}</MyComponentLabel>
+        </MyComponentRoot>
+    );
 });
+
+type MyComponentFieldProps = MyComponentProps & {
+    source: string
+};
+
+export const MyComponentField = ({ source, ...props }: MyComponentFieldProps ) => {
+    const record = useRecordContext();
+    const value = record[source];
+
+    return <MyComponent {...props}>{value}</MyComponent>;
+};
